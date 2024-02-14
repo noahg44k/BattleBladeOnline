@@ -1,0 +1,95 @@
+*{
+    font-family: 'Afacad', sans-serif;
+}
+h1, h2{
+    margin: 0;
+    padding: 0;
+}
+header h2{
+    font-size: 16px;
+}
+header{
+    text-align: center;
+    border: 2px solid black;
+    padding-bottom: 10px;
+    padding-top: 5px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    background-color:antiquewhite;
+}
+header span{
+    color: rgb(201, 181, 51);
+}
+main{
+    padding: 20px;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+}
+main form{
+    display: flex;
+    height: 400px;
+}
+main form > *{
+    width: 33.333%;
+}
+ul{
+    padding: 0;
+    list-style-type: none;
+    margin: 0;
+}
+nav ul li{
+    display:inline-block;
+    margin: 0px 5px;
+}
+li a{
+    text-decoration: none;
+    color: red;
+}
+li a:hover, li a:focus{
+    color: blue;
+}
+li a:visited{
+    color: purple;
+}
+li a:visited:hover, li a:visited:focus{
+    color: blue;
+}
+footer{
+    padding: 0px 20px 20px 20px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+}
+
+.character-creation-div{
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+#content{
+    width: 1000px;
+    margin: 0 auto;
+}
+#name{
+    width: 300px;
+}
+#name-row{
+    text-align: left;
+    margin-bottom: 10px;
+}
+#role-row{
+    text-align: left;
+    margin-bottom: 10px;
+}
+#role-img{
+    border: 2px solid black;
+    image-rendering: pixelated;
+    width: 125px;
+}
+#middle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
