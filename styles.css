@@ -1,15 +1,20 @@
 :root{
-    --primary-color: #6f00ff;
-    --secondary-color: #ffffff;
+    --primary-color: #bd97f0;
+    --secondary-color: #f1e8ff;
     --tertiary-color: #000000;
     --quaternary-color: #b137d6;
     --quinary-color: #4a256d;
 }
 
+body{
+    background-color: var(--secondary-color);
+}
 *{
     font-family: 'Silkscreen', sans-serif;
     font-weight: normal;
     line-height: 1;
+    font-size: 20px;
+    box-sizing: border-box;
 }
 h1, h2{
     margin: 0;
@@ -23,7 +28,7 @@ header h1{
 }
 header{
     text-align: center;
-    border: 2px solid var(--tertiary-color);
+    border: 2px solid var(--quinary-color);
     padding-bottom: 10px;
     padding-top: 5px;
     border-top-right-radius: 10px;
@@ -42,14 +47,30 @@ header h1 span{
 }
 main{
     padding: 20px;
-    border-left: 2px solid var(--tertiary-color);
-    border-right: 2px solid var(--tertiary-color);
+    border-left: 2px solid var(--quinary-color);
+    border-right: 2px solid var(--quinary-color);
 }
 main form{
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr 1fr;
     height: 400px;
+    font-size: 20px;
+}
+main input, main select{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 2px solid var(--quinary-color);
+}
+main h1, main h2, main h2 span{
+    font-size: 30px;
+    margin: 0;
+}
+main h3{
+    margin: 0 0 10px 0;
+}
+main h2 span{
+    color: var(--quaternary-color)
 }
 ul{
     padding: 0;
@@ -77,13 +98,32 @@ li a:visited{
 li a:visited:hover, li a:visited:focus{
     color: var(--quinary-color);
 }
+#create-parent{
+    text-align: center;
+    padding-top: 90px;
+}
+button{
+    padding: 15px;
+    border: none;
+    color: var(--secondary-color);
+    background-color: var(--quaternary-color);
+    transition-duration: 0.25s;
+    border-radius: 15px;
+}
+button:hover, button:focus{
+    border-radius: 15px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    box-shadow: 0px 8px var(--quinary-color);
+    transform: translateY(-8px);
+}
 footer{
     padding: 0px 20px 20px 20px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    border-bottom: 2px solid var(--tertiary-color);
-    border-left: 2px solid var(--tertiary-color);
-    border-right: 2px solid var(--tertiary-color);
+    border-bottom: 2px solid var(--quinary-color);
+    border-left: 2px solid var(--quinary-color);
+    border-right: 2px solid var(--quinary-color);
 }
 
 .character-creation-div{
@@ -92,11 +132,11 @@ footer{
 }
 
 #content{
-    width: 1000px;
+    width: 1500px;
     margin: 0 auto;
 }
 #name{
-    width: 300px;
+    width: 100%;
 }
 #name-row{
     text-align: left;
@@ -107,15 +147,15 @@ footer{
     margin-bottom: 10px;
 }
 #role-img{
-    border: 2px solid var(--tertiary-color);
     image-rendering: pixelated;
-    width: 125px;
+    width: 250px;
 }
 #middle{
     display: grid;
     place-items: center;
 }
 #playerNameTitle {
+    color: var(--tertiary-color);
     word-wrap: break-word; /* Allow long words to be broken and wrap onto the next line */
     overflow-wrap: break-word; /* Also allow long words to be broken and wrap onto the next line (alternative name for word-wrap) */
     hyphens: auto; /* Enable automatic hyphenation */
