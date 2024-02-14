@@ -5,6 +5,7 @@ const playerNameTxt = document.getElementById("playerNameTitle");
 const playerRoleTxt = document.getElementById("roleDisplay");
 const nameInput = document.getElementById("name");
 const roleInput = document.getElementById("role");
+const createBtn = document.getElementById("character-creation-create");
 
 roleDropdown.addEventListener("change", function() {
     updateRoleImage(roleDropdown.value);
@@ -44,6 +45,12 @@ function updateStats(){
     
 }
 
+function createCharacter(){
+    localStorage.setItem('name', playerNameTxt.textContent);
+    localStorage.setItem('role', playerRoleTxt.textContent);
+}
+
+createBtn.addEventListener('click', createCharacter, false);
 nameInput.addEventListener("input", updateStats, false);
 roleDropdown.addEventListener("change", updateStats, false);
 
