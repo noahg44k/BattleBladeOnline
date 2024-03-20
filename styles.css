@@ -1,13 +1,21 @@
 :root{
-    --primary-color: #bd97f0;
+    /* Bright Colors */
+    --primary-color: #cfb0f7;
     --secondary-color: #f1e8ff;
-    --tertiary-color: #000000;
+    --senary-color: #FFEE88;
+
+    /* Vibrant Colors */
     --quaternary-color: #b137d6;
+    --septenary-color: #FE5F55;
+
+    /* Dark Colors */
+    --tertiary-color: #000000;
     --quinary-color: #4a256d;
 }
 
 body{
     background-color: var(--secondary-color);
+    margin: 8px;
 }
 *{
     font-family: 'Silkscreen', sans-serif;
@@ -20,6 +28,15 @@ h1, h2{
     margin: 0;
     padding: 0;
 }
+#content{
+    width: 1500px;
+    margin: 0 auto;
+}
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ HEADER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
 header h2{
     font-size: 16px;
 }
@@ -37,14 +54,24 @@ header{
     color: var(--secondary-color);
 }
 header h2 span{
-    color: var(--primary-color);
+    color: var(--senary-color);
 }
 header h1 span{
     display: block;
     font-size: 34px;
-    font-family: "Silkscreen", sans-serif;
     color: var(--quaternary-color);
 }
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ HEADER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ CONTENT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.character-creation-div{
+    display: inline-block;
+    box-sizing: border-box;
+}
+
 main{
     padding: 20px;
     border-left: 2px solid var(--quinary-color);
@@ -72,6 +99,79 @@ main h3{
 main h2 span{
     color: var(--quaternary-color)
 }
+button{
+    padding: 60px 100px;
+    border: none;
+    color: var(--secondary-color);
+    background-color: var(--quaternary-color);
+    transition-duration: 0.25s;
+    border-radius: 200px;
+    font-size: 1.5rem;
+}
+button:hover, button:focus{
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    box-shadow: 0px 15px var(--quinary-color);
+    transform: translateY(-15px);
+    color: var(--quinary-color);
+}
+.disabled, .disabled:hover, .disabled:focus{
+    background-color: var(--quaternary-color);
+    color: var(--secondary-color);
+    box-shadow: none;
+    transform: translateY(0px);
+    opacity: 50%;
+}
+
+#left > ul{
+    height: 100%;
+    display: grid;
+    grid-template-rows: 72px 72px 256px;
+}
+#create-parent{
+    display: grid;
+    place-items: center;
+}
+#name{
+    width: 100%;
+}
+#name-row{
+    text-align: left;
+    margin-bottom: 10px;
+}
+#role-row{
+    text-align: left;
+    margin-bottom: 10px;
+}
+#role-img{
+    image-rendering: pixelated;
+    width: 250px;
+}
+#middle{
+    display: grid;
+    place-items: center;
+}
+#statsLabel{
+    color: var(--quinary-color);
+}
+.h3{
+    font-size: 1.1rem;
+}
+#playerNameTitle {
+    color: var(--tertiary-color);
+    word-wrap: break-word; /* Allow long words to be broken and wrap onto the next line */
+    overflow-wrap: break-word; /* Also allow long words to be broken and wrap onto the next line (alternative name for word-wrap) */
+    hyphens: auto; /* Enable automatic hyphenation */
+}
+#statNumbers{
+    margin-top: 15px;
+    color: var(--quinary-color);
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ CONTENT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ FOOTER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 ul{
     padding: 0;
     list-style-type: none;
@@ -98,25 +198,6 @@ li a:visited{
 li a:visited:hover, li a:visited:focus{
     color: var(--quinary-color);
 }
-#create-parent{
-    text-align: center;
-    padding-top: 90px;
-}
-button{
-    padding: 15px;
-    border: none;
-    color: var(--secondary-color);
-    background-color: var(--quaternary-color);
-    transition-duration: 0.25s;
-    border-radius: 15px;
-}
-button:hover, button:focus{
-    border-radius: 15px;
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-    box-shadow: 0px 8px var(--quinary-color);
-    transform: translateY(-8px);
-}
 footer{
     padding: 0px 20px 20px 20px;
     border-bottom-left-radius: 10px;
@@ -125,38 +206,8 @@ footer{
     border-left: 2px solid var(--quinary-color);
     border-right: 2px solid var(--quinary-color);
 }
-
-.character-creation-div{
-    display: inline-block;
-    box-sizing: border-box;
+.current-page, .current-page:visited{
+    color: var(--quinary-color);
 }
 
-#content{
-    width: 1500px;
-    margin: 0 auto;
-}
-#name{
-    width: 100%;
-}
-#name-row{
-    text-align: left;
-    margin-bottom: 10px;
-}
-#role-row{
-    text-align: left;
-    margin-bottom: 10px;
-}
-#role-img{
-    image-rendering: pixelated;
-    width: 250px;
-}
-#middle{
-    display: grid;
-    place-items: center;
-}
-#playerNameTitle {
-    color: var(--tertiary-color);
-    word-wrap: break-word; /* Allow long words to be broken and wrap onto the next line */
-    overflow-wrap: break-word; /* Also allow long words to be broken and wrap onto the next line (alternative name for word-wrap) */
-    hyphens: auto; /* Enable automatic hyphenation */
-}
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ FOOTER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
