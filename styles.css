@@ -73,7 +73,7 @@ header h1 span{
 }
 
 main{
-    padding: 20px;
+    padding: 18px;
     border-left: 2px solid var(--quinary-color);
     border-right: 2px solid var(--quinary-color);
 }
@@ -127,6 +127,7 @@ button:hover, button:focus{
     height: 100%;
     display: grid;
     grid-template-rows: 72px 72px 256px;
+    grid-template-columns: 100%;
 }
 #create-parent{
     display: grid;
@@ -211,3 +212,65 @@ footer{
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ FOOTER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+@media screen and (max-width: 600px){
+
+    #content{
+        width: 95vw;
+    }
+
+    main form{
+        grid-template-rows: minmax(0, 1fr) minmax(0, 0.56fr) auto;
+        grid-template-columns: 100%;
+        height: auto;
+        font-size: 20px;
+    }
+    #role{
+        width: 100%;
+    }
+    #character-creation-create{
+        padding: 14% 17%;
+    }
+    #left > ul{
+        grid-template-rows: 80px 80px 180px;
+        grid-template-columns: 100%;
+    }
+    #middle{
+        align-items: start;
+    }
+    #role-img{
+        width: 55%;
+    }
+
+    main h2 span{
+        color: var(--tertiary-color);
+    }
+
+    #statsLabel{
+        margin-bottom: 0;
+        color: var(--tertiary-color);
+    }
+    #right > *{
+        color: var(--quinary-color);
+    }
+    #statNumbers{
+        margin-top: 5px;
+        margin-left: 2px;
+        padding-top: 0px;
+    }
+    #statNumbers h3{
+        margin: 0;
+    }
+    #statNumbers h3{
+        color: var(--septenary-color);
+    }
+
+    nav ul li{
+        display:block;
+    }
+    nav ul :not(:last-child){
+        border-right: none;
+        padding-bottom: 13px;
+    }
+
+}
