@@ -29,7 +29,7 @@ h1, h2{
     padding: 0;
 }
 #content{
-    width: 1500px;
+    width: 75vw;
     margin: 0 auto;
 }
 
@@ -80,7 +80,7 @@ main{
 main form{
     display: grid;
     grid-template-rows: 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     height: 400px;
     font-size: 20px;
 }
@@ -93,14 +93,14 @@ main h1, main h2, main h2 span{
     font-size: 30px;
     margin: 0;
 }
+main h2 span{
+    color: var(--quaternary-color);
+}
 main h3{
     margin: 0 0 10px 0;
 }
-main h2 span{
-    color: var(--quaternary-color)
-}
 button{
-    padding: 60px 100px;
+    padding: 12% 15%;
     border: none;
     color: var(--secondary-color);
     background-color: var(--quaternary-color);
@@ -146,14 +146,11 @@ button:hover, button:focus{
 }
 #role-img{
     image-rendering: pixelated;
-    width: 250px;
+    width: 15vw;
 }
 #middle{
     display: grid;
     place-items: center;
-}
-#statsLabel{
-    color: var(--quinary-color);
 }
 .h3{
     font-size: 1.1rem;
@@ -164,9 +161,21 @@ button:hover, button:focus{
     overflow-wrap: break-word; /* Also allow long words to be broken and wrap onto the next line (alternative name for word-wrap) */
     hyphens: auto; /* Enable automatic hyphenation */
 }
+#stats{
+    height: 100%;
+    position: relative;
+}
 #statNumbers{
-    margin-top: 15px;
+    margin-top: 5px;
     color: var(--quinary-color);
+    position:absolute;
+    bottom: 10px;
+}
+#statNumbers h3{
+    margin: 0 0 2px 0;
+}
+.label{
+    font-size: 1.2rem;
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ CONTENT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -213,23 +222,30 @@ footer{
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ FOOTER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 1050px){
+    #content{
+        width: 95vw;
+    }
+}
+
+@media screen and (max-width: 900px){
 
     #content{
         width: 95vw;
     }
 
     main form{
-        grid-template-rows: minmax(0, 1fr) minmax(0, 0.56fr) auto;
+        grid-template-rows: minmax(0, 1fr) minmax(0, 0.75fr) auto;
         grid-template-columns: 100%;
         height: auto;
         font-size: 20px;
     }
+    
+    button{
+        padding: 8% 12%;
+    }
     #role{
         width: 100%;
-    }
-    #character-creation-create{
-        padding: 14% 17%;
     }
     #left > ul{
         grid-template-rows: 80px 80px 180px;
@@ -239,7 +255,8 @@ footer{
         align-items: start;
     }
     #role-img{
-        width: 55%;
+        width: 30%;
+        display:block;
     }
 
     main h2 span{
@@ -253,8 +270,11 @@ footer{
     #right > *{
         color: var(--quinary-color);
     }
+    #stats{
+        position: static;
+    }
     #statNumbers{
-        margin-top: 5px;
+        position: static;
         margin-left: 2px;
         padding-top: 0px;
     }
@@ -265,12 +285,33 @@ footer{
         color: var(--septenary-color);
     }
 
+}
+
+@media screen and (max-width: 600px){
+
+    main form{
+        grid-template-rows: minmax(0, 1fr) minmax(0, 0.56fr) auto;
+    }
+    button{
+        padding: 11% 17%;
+    }
+
     nav ul li{
         display:block;
     }
     nav ul :not(:last-child){
         border-right: none;
         padding-bottom: 13px;
+    }
+
+}
+
+@media screen and (max-width: 440px){
+    #middle{
+        align-items: start;
+    }
+    #role-img{
+        width: 55%;
     }
 
 }

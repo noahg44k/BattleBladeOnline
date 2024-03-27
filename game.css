@@ -1,0 +1,22 @@
+:root{
+    /* Bright Colors */
+    --primary-color: #cfb0f7;
+    --secondary-color: #f1e8ff;
+    --senary-color: #FFEE88;
+
+    /* Vibrant Colors */
+    --quaternary-color: #b137d6;
+    --septenary-color: #FE5F55;
+
+    /* Dark Colors */
+    --tertiary-color: #000000;
+    --quinary-color: #4a256d;
+}
+
+.subMenu{
+    height: 200px;
+    border: 2px solid var(--quinary-color);
+    border-radius: 20px;
+    margin: 5px;
+    box-sizing: border-box;
+}
