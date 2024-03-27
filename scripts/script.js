@@ -119,19 +119,28 @@ class CharacterCreator{
     }
     
     updateStats(){
-        this.playerRoleTxt.textContent = this.roleDropdown.value;
-        this.statNumbersArea.innerHTML = '';
-    
-        for(const [statName, statValue] of Object.entries(this.getRole(this.playerRoleTxt.textContent)))
-        {
-            const newElem = document.createElement('h3');
-            newElem.className = 'h3';
-            const newElemTxt = document.createTextNode(`${statName}: ${statValue}`);
-            if(statName!=="name")
+        if(this.roleDropdown.value.toLowerCase() !== "select"){
+
+            this.playerRoleTxt.textContent = this.roleDropdown.value;
+            this.statNumbersArea.innerHTML = '';
+        
+            for(const [statName, statValue] of Object.entries(this.getRole(this.playerRoleTxt.textContent)))
             {
-                newElem.appendChild(newElemTxt);
-                this.statNumbersArea.appendChild(newElem);
+                const newElem = document.createElement('h3');
+                newElem.className = 'h3';
+                const newElemTxt = document.createTextNode(`${statName}: ${statValue}`);
+                if(statName!=="name")
+                {
+                    newElem.appendChild(newElemTxt);
+                    this.statNumbersArea.appendChild(newElem);
+                }
             }
+        }
+        else{
+            
+            this.playerRoleTxt.textContent = "";
+            this.statNumbersArea.innerHTML = "";
+
         }
     }
     
