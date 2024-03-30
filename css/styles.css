@@ -99,7 +99,7 @@ main h2 span{
 main h3{
     margin: 0 0 10px 0;
 }
-button{
+#character-creation-create{
     padding: 12% 15%;
     border: none;
     color: var(--secondary-color);
@@ -108,7 +108,7 @@ button{
     border-radius: 200px;
     font-size: 1.5rem;
 }
-button:hover, button:focus{
+#character-creation-create:hover, #character-creation-create:focus{
     background-color: var(--primary-color);
     color: var(--secondary-color);
     box-shadow: 0px 15px var(--quinary-color);

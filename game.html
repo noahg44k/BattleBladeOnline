@@ -27,14 +27,29 @@
                     <div id="inventoryBox" class="subMenu col pt-1">
                         <span id="inventoryName"></span> Inventory <br/>
                         Class: <span id="inventoryClass"></span>
+                        <div id="statNumbersArea" class="">
+                        </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="logBox subMenu col pt-1">
+                    <div class="logBox subMenu col pt-1 pb-3">
                         Log
+                        <div id="recentLogMsgs" class="d-flex flex-column-reverse h-100">
+
+                        </div>
                     </div>
                     <div id="actionsBox" class="subMenu col pt-1">
                         Actions
+                        <div class="actionsButtonsContainer container d-grid" id="actionsButtonsContainer">
+                            <div class="row">
+                                <button class="action-btn col">Explore</button>
+                                <button class="action-btn col">Sleep</button>
+                            </div>
+                            <div class="row">
+                                <button class="action-btn col">Pray</button>
+                                <button class="action-btn col">Inspect Player</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
            </div> 
@@ -55,6 +70,7 @@
             </nav>
         </footer>
     </div>
+    <script src="scripts/Role.js"></script>
     <script src="scripts/game.js"></script>
 </body>
 </html>
