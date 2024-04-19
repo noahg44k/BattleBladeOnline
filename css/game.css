@@ -22,7 +22,28 @@
     margin: 5px;
     box-sizing: border-box;
 }
-.logBox div{
+.sub-menu-title{
+    height: 20%;
+}
+.subMenu > div:nth-child(2){
+    height: 100%;
+}
+
+.characterBox{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    background-color: #ffffff;
+}
+.pixelart
+{
+    height: 100%;
+    width: 100%;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
+#recentLogMsgs{
     color: var(--octenary-color);
     overflow-y:scroll;
 }
@@ -34,9 +55,9 @@
     border-radius: 15px;
     color: var(--quinary-color);
     background-color: var(--primary-color);
-    height: 60px;
-    margin: 10px 10px;
-    font-size: 1em;
+    height: 75%;
+    margin: 0;
+    font-size: 100%;
     transition-duration: 0.3s;
 }
 .action-btn:hover, .action-btn:focus{
@@ -49,11 +70,17 @@
 }
 #statNumbersArea{
     overflow-y: scroll;
-    height: 79.3%;
+    box-sizing: border-box;
     color: var(--octenary-color);
 }
 #statNumbersArea p{
     padding: 2px;
     margin: 0;
     font-size: 0.85em;
+}
+@media screen and (max-width: 900px){
+    
+    .action-btn{
+        
+    }
 }
