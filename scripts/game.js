@@ -7,28 +7,21 @@ class Game{
         this.inventoryClass = document.getElementById("inventoryClass");
         this.recentLogMsg = document.getElementById("recentLogMsgs");
         this.statNumbersArea = document.getElementById("statNumbersArea");
+        this.actionsArea = document.getElementById('actionsButtonsContainer');
 
-        this.logMsg(localStorage.getItem("logmsg"));
-        this.logMsg(localStorage.getItem("logmsg"));
-        this.logMsg(localStorage.getItem("logmsg"));
-        this.logMsg(localStorage.getItem("logmsg"));
-        this.logMsg(localStorage.getItem("logmsg"));
+        this.playerName = localStorage.getItem("name");
+        this.playerClass = localStorage.getItem("role");
 
+        Log.logmsg(localStorage.getItem("logmsg"), this.recentLogMsg);
+
+        this.actionsArea.addEventListener('click', (evt) => {this.actions(evt);}, false);
         this.setInfo();
         this.updateStats();
     }
 
     setInfo(){
-        this.inventoryName.textContent = localStorage.getItem("name");
-        this.inventoryClass.textContent = localStorage.getItem("role");
-    }
-    
-    logMsg(logmsg){
-        const newLog = document.createElement("p");
-        const logText = document.createTextNode(logmsg);
-    
-        newLog.appendChild(logText);
-        this.recentLogMsg.appendChild(newLog);
+        this.inventoryName.textContent = this.playerName;
+        this.inventoryClass.textContent = this.playerClass;
     }
     
     updateStats(){
@@ -43,15 +36,54 @@ class Game{
         {
             const newElem = document.createElement('p');
             const newElemTxt = document.createTextNode(`${statName}: ${statValue}`);
-            console.log("UPDATING STATS...");
             if(statName!=="name")
             {
                 newElem.appendChild(newElemTxt);
                 this.statNumbersArea.appendChild(newElem);
-                console.log("UPDATING STATS...");
             }
         }
         console.log("UPDATED STATS");
+    }
+
+    actions(evt){
+        const btn = evt.target;
+        
+        if(!btn || btn.tagName !== 'BUTTON') return;
+
+        try{
+            switch(btn.textContent){
+                case "Explore":
+                    this.explore();
+                    return;
+                case "Sleep":
+                    this.sleep();
+                    return;
+                case "Pray":
+                    this.pray();
+                    return;
+                case "Inspect Player":
+                    this.inspectPlayer();
+                    return;
+                default:
+                    return;
+            }
+        }
+        catch(err){
+            console.error(err);
+        }
+    }
+
+    explore(){
+        Log.logmsg(`${this.playerName} is exploring!`, this.recentLogMsg);
+    }
+    sleep(){
+        Log.logmsg(`${this.playerName} is sleeping!`, this.recentLogMsg);
+    }
+    pray(){
+        Log.logmsg(`${this.playerName} is praying!`, this.recentLogMsg);
+    }
+    inspectPlayer(){
+        Log.logmsg(`${this.playerName} is introspecting!`, this.recentLogMsg);
     }
 }
 

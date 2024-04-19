@@ -25,27 +25,36 @@ class Role{
         intelligence : 4,
         perception: 6
     };
-    static crossbowmanStats = {
-        name: "crossbowman",
+    static arbalistStats = {
+        name: "arbalist",
         maxHp: 90,
         strength: 8,
         speed: 5,
         intelligence : 4,
         perception: 8
     };
-    static alchemistStats = {
-        name: "alchemist",
+    static sorcererStats = {
+        name: "sorcerer",
         maxHp: 85,
         strength: 2,
         speed: 7,
         intelligence : 10,
         perception: 6
     };
+    static barrenStats = {
+        name: "barren",
+        maxHp: 70,
+        strength: 1,
+        speed: 1,
+        intelligence : 1,
+        perception: 1
+    };
     static roles = {
         knight: new Role(this.knightStats), 
         cotorel: new Role(this.cotorelStats), 
-        crossbowman: new Role(this.crossbowmanStats), 
-        alchemist: new Role(this.alchemistStats)
+        arbalist: new Role(this.arbalistStats), 
+        sorcerer: new Role(this.sorcererStats),
+        barren: new Role(this.barrenStats)
     };
 
     static takeDamage(dmg) {

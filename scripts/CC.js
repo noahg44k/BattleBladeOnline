@@ -57,8 +57,8 @@ class CharacterCreator{
     
     updateRoleImage(roleSelected) {
         switch (roleSelected) {
-            case "alchemist":
-                this.roleImg.src = "sprites/alchemy.png";
+            case "sorcerer":
+                this.roleImg.src = "sprites/book.png";
                 break;
             case "knight":
                 // Handle other roles
@@ -67,8 +67,11 @@ class CharacterCreator{
             case "cotorel":
                 this.roleImg.src = "sprites/knife.png";
                 break;
-            case "crossbowman":
+            case "arbalist":
                 this.roleImg.src = "sprites/crossbow.png";
+                break;
+            case "barren":
+                this.roleImg.src = "sprites/sun.png";
                 break;
             // Add more cases for other roles if needed
     
