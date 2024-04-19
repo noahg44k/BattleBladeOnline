@@ -21,33 +21,42 @@
         <main>
            <div class="container-xl">
                 <div class="row">
-                    <div id="mapBox" class="subMenu col pt-1">
-                        Map
+                    <div id="mapBox" class="subMenu col-sm pt-1">
+                        <div class="characterBox">
+                            <img class="pixelart" src="sprites/Cotorel.png" alt="cotorel - a thief-like class proficient with small blades.">
+                            <img class="pixelart" src="sprites/Sorcerer.png" alt="cotorel - a thief-like class proficient with small blades.">
+                            <img class="pixelart" src="sprites/Knight.png" alt="cotorel - a thief-like class proficient with small blades.">
+                            <img class="pixelart" src="sprites/Barren.png" alt="cotorel - a thief-like class proficient with small blades.">
+                            <img class="pixelart" src="sprites/Arbalist.png" alt="cotorel - a thief-like class proficient with small blades.">
+                        </div>
                     </div>
-                    <div id="inventoryBox" class="subMenu col pt-1">
-                        <span id="inventoryName"></span> Inventory <br/>
-                        Class: <span id="inventoryClass"></span>
-                        <div id="statNumbersArea" class="">
+                    <div id="inventoryBox" class="subMenu col-sm pt-1 d-flex flex-column">
+                        <div class="">
+                            <span id="inventoryName"></span><br/>
+                            Class: <span id="inventoryClass"></span>
+                        </div>
+                        <div id="statNumbersArea">
+
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="logBox subMenu col pt-1 pb-3">
-                        Log
-                        <div id="recentLogMsgs" class="d-flex flex-column-reverse h-100">
+                    <div class="logBox subMenu col-sm pt-1 d-flex flex-column">
+                        <div class="sub-menu-title">Log</div>
+                        <div id="recentLogMsgs" class="d-flex flex-column-reverse">
 
                         </div>
                     </div>
-                    <div id="actionsBox" class="subMenu col pt-1">
-                        Actions
+                    <div id="actionsBox" class="subMenu col-sm pt-1 d-flex flex-column">
+                        <div class="sub-menu-title">Actions</div>
                         <div class="actionsButtonsContainer container d-grid" id="actionsButtonsContainer">
                             <div class="row">
-                                <button class="action-btn col">Explore</button>
-                                <button class="action-btn col">Sleep</button>
+                                <button class="action-btn col-sm me-sm-1">Explore</button>
+                                <button class="action-btn col-sm ms-sm-1">Sleep</button>
                             </div>
                             <div class="row">
-                                <button class="action-btn col">Pray</button>
-                                <button class="action-btn col">Inspect Player</button>
+                                <button class="action-btn col-sm me-sm-1">Pray</button>
+                                <button class="action-btn col-sm ms-sm-1">Inspect Player</button>
                             </div>
                         </div>
                     </div>
@@ -70,6 +79,7 @@
             </nav>
         </footer>
     </div>
+    <script src="scripts/Log.js"></script>
     <script src="scripts/Role.js"></script>
     <script src="scripts/game.js"></script>
 </body>
