@@ -241,7 +241,7 @@ footer{
         font-size: 20px;
     }
     
-    button{
+    #character-creation-create{
         padding: 8% 12%;
     }
     #role{
@@ -292,7 +292,7 @@ footer{
     main form{
         grid-template-rows: minmax(0, 1fr) minmax(0, 0.56fr) auto;
     }
-    button{
+    #character-creation-create{
         padding: 11% 17%;
     }
 

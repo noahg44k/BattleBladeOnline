@@ -42,6 +42,19 @@
     image-rendering: -moz-crisp-edges;
     image-rendering: crisp-edges;
 }
+.pixelartContainer{
+    margin-left: -25px;
+    height: 100px;
+    width: 100px;
+}
+.interfaceTitle{
+    font-size: 1rem;
+    margin-bottom: 25px;
+    margin-top: -10px;
+}
+.interfaceInterationArea{
+    width: min-content;
+}
 
 #recentLogMsgs{
     color: var(--octenary-color);
@@ -51,16 +64,21 @@
     font-size: 1em;
 }
 .action-btn{
+    height: 75%;
+    margin: 0;
+    font-size: 100%;
+}
+.game-btn{
     border: none;
     border-radius: 15px;
     color: var(--quinary-color);
     background-color: var(--primary-color);
-    height: 75%;
-    margin: 0;
-    font-size: 100%;
     transition-duration: 0.3s;
 }
-.action-btn:hover, .action-btn:focus{
+.interface-btn{
+    padding: 15px;
+}
+.game-btn:hover, .game-btn:focus{
     background-color: var(--primary-color);
     color: var(--secondary-color);
     box-shadow: 0px 6px var(--quinary-color);
@@ -78,9 +96,8 @@
     margin: 0;
     font-size: 0.85em;
 }
+
 @media screen and (max-width: 900px){
     
-    .action-btn{
-        
-    }
+    
 }
