@@ -21,13 +21,9 @@
         <main>
            <div class="container-xl">
                 <div class="row">
-                    <div id="mapBox" class="subMenu col-sm pt-1">
-                        <div class="characterBox">
-                            <img class="pixelart" src="sprites/Cotorel.png" alt="cotorel - a thief-like class proficient with small blades.">
-                            <img class="pixelart" src="sprites/Sorcerer.png" alt="cotorel - a thief-like class proficient with small blades.">
-                            <img class="pixelart" src="sprites/Knight.png" alt="cotorel - a thief-like class proficient with small blades.">
-                            <img class="pixelart" src="sprites/Barren.png" alt="cotorel - a thief-like class proficient with small blades.">
-                            <img class="pixelart" src="sprites/Arbalist.png" alt="cotorel - a thief-like class proficient with small blades.">
+                    <div id="interfaceBox" class="subMenu col-sm pt-1">
+                        <div id="interface" class="h-100 d-flex align-items-center w-100">
+                            
                         </div>
                     </div>
                     <div id="inventoryBox" class="subMenu col-sm pt-1 d-flex flex-column">
@@ -51,12 +47,12 @@
                         <div class="sub-menu-title">Actions</div>
                         <div class="actionsButtonsContainer container d-grid" id="actionsButtonsContainer">
                             <div class="row">
-                                <button class="action-btn col-sm me-sm-1">Explore</button>
-                                <button class="action-btn col-sm ms-sm-1">Sleep</button>
+                                <button class="game-btn action-btn col-sm me-sm-1">Explore</button>
+                                <button class="game-btn action-btn col-sm ms-sm-1">Sleep</button>
                             </div>
                             <div class="row">
-                                <button class="action-btn col-sm me-sm-1">Pray</button>
-                                <button class="action-btn col-sm ms-sm-1">Inspect Player</button>
+                                <button class="game-btn action-btn col-sm me-sm-1">Pray</button>
+                                <button class="game-btn action-btn col-sm ms-sm-1">Inspect Player</button>
                             </div>
                         </div>
                     </div>
@@ -80,7 +76,10 @@
         </footer>
     </div>
     <script src="scripts/Log.js"></script>
+    <script src="scripts/FileReader.js"></script>
+    <script src="scripts/Items/Item.js"></script>
     <script src="scripts/Role.js"></script>
+    <script src="scripts/Encounter.js"></script>
     <script src="scripts/game.js"></script>
 </body>
 </html>
