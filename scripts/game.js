@@ -8,6 +8,7 @@ class Game{
         this.recentLogMsg = document.getElementById("recentLogMsgs");
         this.statNumbersArea = document.getElementById("statNumbersArea");
         this.actionsArea = document.getElementById('actionsButtonsContainer');
+        this.interfaceArea = document.getElementById('interface');
 
         this.playerName = localStorage.getItem("name");
         this.playerClass = localStorage.getItem("role");
@@ -15,8 +16,19 @@ class Game{
         Log.logmsg(localStorage.getItem("logmsg"), this.recentLogMsg);
 
         this.actionsArea.addEventListener('click', (evt) => {this.actions(evt);}, false);
+        this.interfaceArea.addEventListener('click', (evt) => {this.interface(evt);}, false);
         this.setInfo();
         this.updateStats();
+
+        this.characterBox = 
+        `<div class="characterBox">
+            <img class="pixelart" src="sprites/Cotorel.png" alt="cotorel - a thief-like class proficient with small blades.">
+            <img class="pixelart" src="sprites/Sorcerer.png" alt="cotorel - a thief-like class proficient with small blades.">
+            <img class="pixelart" src="sprites/Knight.png" alt="cotorel - a thief-like class proficient with small blades.">
+            <img class="pixelart" src="sprites/Barren.png" alt="cotorel - a thief-like class proficient with small blades.">
+            <img class="pixelart" src="sprites/Arbalist.png" alt="cotorel - a thief-like class proficient with small blades.">
+        </div>`
+
     }
 
     setInfo(){
@@ -73,8 +85,29 @@ class Game{
         }
     }
 
+    interface(evt){
+        const btn = evt.target;
+        
+        if(!btn || btn.tagName !== 'BUTTON') return;
+
+        try{
+            switch(btn.textContent){
+                case "Fight!":
+                    this.fight();
+                    return;
+                default:
+                    return;
+            }
+        }
+        catch(err){
+            console.error(err);
+        }
+    }
+
     explore(){
         Log.logmsg(`${this.playerName} is exploring!`, this.recentLogMsg);
+        this.interfaceArea.innerHTML = Encounter.randomEncounter();
+        Log.logmsg(`${this.playerName} ${Encounter.logMsg}`, this.recentLogMsg);
     }
     sleep(){
         Log.logmsg(`${this.playerName} is sleeping!`, this.recentLogMsg);
@@ -84,6 +117,9 @@ class Game{
     }
     inspectPlayer(){
         Log.logmsg(`${this.playerName} is introspecting!`, this.recentLogMsg);
+    }
+    fight(){
+        Log.logmsg(`${this.playerName} has entered battle!`, this.recentLogMsg);
     }
 }
 
